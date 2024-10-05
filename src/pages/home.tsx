@@ -4,11 +4,13 @@ import { News } from "@/components/news";
 
 export function Home() {
   return(
-    <div className="h-full">
+    <div className="">
       <Header/>
 
-      <main className="flex flex-col justify-center items-center p-12">
-        <h1 className="my-8">Sindicato Intermunicipal da Indústria da Alimentação do Estado de Mato Grosso</h1>
+      <main className="flex flex-col justify-center items-center">
+        <div className="bg-home w-full h-[800px] bg-cover bg-center flex items-start justify-center">
+          <h1 className="text-7xl text-slate-50 font-bold border-b-4 py-5 uppercase italic mt-60">Bem-vindos ao SIAMT</h1>
+        </div>
 
         <News/>
       </main>

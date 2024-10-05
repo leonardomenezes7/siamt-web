@@ -8,7 +8,8 @@ export default {
   theme: {
   	extend: {
 			backgroundImage: {
-				"about": "url('./assets/about.jpg')"
+				"about": "url('./assets/about.jpg')",
+				"home": "url('./assets/home.png')"
 			},
   		borderRadius: {
   			lg: 'var(--radius)',
