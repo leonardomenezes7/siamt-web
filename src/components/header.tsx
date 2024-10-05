@@ -1,31 +1,81 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import logo from "../assets/logo-g.png";
+import mobileLogo from "../assets/logo-s.png";
+import { AlignJustify, X } from "lucide-react";
+import { useState } from "react";
 
 export function Header() {
-  return(
-    <header className="bg-slate-50 w-full flex items-center p-12 justify-between max-md:hidden">
-      <img src="" alt="Logo SIAMT" />
-      
-      <nav className="flex gap-12 font-semibold text-green-600">
-        <Link to="/" className="hover:text-green-700">
-          Home
-        </Link>
+  const [open, setOpen] = useState(false);
 
-        <Link to="/about" className="hover:text-green-700">
-          Sobre
-        </Link>
+  return (
+    <>
+      <div
+        className={`bg-slate-50 absolute inset-0 h-full flex flex-col p-6 ${
+          open ? "visible" : "hidden"
+        }`}
+      >
+        <div className="flex justify-between">
+          <img src={mobileLogo} alt="Logo SIAMT" className="h-8 lg:hidden" />
+          <X onClick={() => setOpen((currentValue) => !currentValue)} />
+        </div>
+        
 
-        <Link to="/about" className="hover:text-green-700">
-          Notícias
-        </Link>
+        <nav className="flex flex-col space-y-8 font-semibold text-green-600 mt-8">
+          <Link to="/" className="hover:text-green-700 border-b py-4">
+            Home
+          </Link>
 
-        <Link to="/about" className="hover:text-green-700">
-          Convenções Coletivas
-        </Link>
+          <Link to="/about" className="hover:text-green-700 border-b py-4">
+            Sobre
+          </Link>
 
-        <Link to="/about" className="hover:text-green-700">
-          Contato
-        </Link>
-      </nav>
-    </header>
-  )
+          <Link to="/about" className="hover:text-green-700 border-b py-4">
+            Notícias
+          </Link>
+
+          <Link to="/about" className="hover:text-green-700 border-b py-4">
+            Convenções Coletivas
+          </Link>
+
+          <Link to="/about" className="hover:text-green-700 border-b py-4">
+            Contato
+          </Link>
+        </nav>
+      </div>
+
+      <header className="bg-slate-50 w-full flex items-center px-12 py-4 justify-between max-md:px-6">
+        <img src={logo} alt="Logo SIAMT" className="max-md:hidden" />
+        <img src={mobileLogo} alt="Logo SIAMT" className="h-8 lg:hidden" />
+
+        <nav className="flex gap-12 font-semibold text-green-600 max-md:hidden">
+          <Link to="/" className="hover:text-green-700">
+            Home
+          </Link>
+
+          <Link to="/about" className="hover:text-green-700">
+            Sobre
+          </Link>
+
+          <Link to="/about" className="hover:text-green-700">
+            Notícias
+          </Link>
+
+          <Link to="/about" className="hover:text-green-700">
+            Convenções Coletivas
+          </Link>
+
+          <Link to="/about" className="hover:text-green-700">
+            Contato
+          </Link>
+        </nav>
+
+        <div
+          className="lg:hidden"
+          onClick={() => setOpen((currentValue) => !currentValue)}
+        >
+          <AlignJustify />
+        </div>
+      </header>
+    </>
+  );
 }
