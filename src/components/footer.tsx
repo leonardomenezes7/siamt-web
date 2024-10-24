@@ -2,7 +2,7 @@ import logo from "../assets/logo-g.png"
 
 export function Footer() {
   return(
-    <footer className="bg-slate-100 flex flex-col justify-center items-center p-12 space-y-4 max-md:p-6">
+    <footer className="bg-slate-100 flex flex-col justify-center items-center p-12 space-y-4 max-md:p-6" id="footer">
       <img src={logo} alt="Logo do SIAMT" className="h-12"/>
 
       <span className="text-sm max-md:text-center">Av. Historiador Rubens de Mendonça, 4193 - Bosque da Saude, Cuiabá - MT</span>

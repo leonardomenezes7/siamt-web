@@ -4,7 +4,7 @@ import { News } from "@/components/news"
 import { Map } from "@/components/map"
 
 export function Home() {
-  return(
+   return(
     <div className="">
       <Header/>
 

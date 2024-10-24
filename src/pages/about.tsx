@@ -1,5 +1,7 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function About() {
   return (
@@ -7,7 +9,14 @@ export function About() {
       <Header />
 
       <main className="flex flex-col">
-        <div className="w-full bg-about bg-cover h-[344px] flex items-center p-12 max-md:h-[200px] max-md:p-6">
+        <div className="w-full px-12 py-6">
+          <Link to="/" className="flex gap-4 text-green-500">
+            <ArrowLeft/>
+            Voltar
+          </Link>
+        </div>
+
+        <div className="w-full bg-about bg-cover bg-left h-[344px] flex items-center p-12 max-md:h-[200px] max-md:p-6">
           <h1 className="text-6xl font-semibold italic text-white max-md:text-4xl ">
             Sobre
           </h1>

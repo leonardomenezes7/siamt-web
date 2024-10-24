@@ -3,9 +3,27 @@ import homeImage from "../assets/home.png"
 import 'swiper/css';
 import { useEffect, useState } from "react";
 
+interface News {
+  id: string,
+  title: string,
+  description: string,
+  author: string,
+  created_at: string
+  image: string,
+}
 
 export function News() {
   const [slidesPerView, setSlidesPerView] = useState(2)
+  const [news, setNews] = useState<News[]>([])
+
+  useEffect(() => {
+    fetch("http://localhost:3333/news")
+      .then(response => response.json())
+      .then(data => {
+        setNews(data.allNews)
+        console.log(data.allNews)
+      })
+  }, [])
 
   useEffect(() => {
     function handleResize() {
@@ -21,72 +39,30 @@ export function News() {
     <div className="flex flex-col space-y-6 p-12 max-lg:p-6">
       <h2 className="text-6xl text-green-500 italic font-semibold max-lg:text-3xl">Notícias</h2>
 
-      <div className="">
+      <div>
         <Swiper
           slidesPerView={slidesPerView}
           pagination={{ clickable: true }}
           spaceBetween={20}
         >
-          <SwiperSlide>
-            <div className="flex flex-col space-y-4">
-              <img src={homeImage} alt="Foto da notícia" />
-              <h2 className="text-lg font-semibold text-green-500">Novo projeto de infraestrutura é anunciado para revitalizar áreas urbanas.</h2>
-              <p className="break-words">
-                Um novo projeto de infraestrutura foi anunciado nesta semana com o objetivo de revitalizar áreas urbanas em grandes cidades. O plano inclui melhorias em sistemas de transporte público, ampliação de áreas verdes e modernização de espaços comunitários. Autoridades destacam que o projeto visa melhorar a qualidade de vida dos moradores e promover o desenvolvimento sustentável. As obras devem começar no início do próximo ano e estão previstas para serem concluídas em 2026.
-              </p>
+          {news.map((item) => {
+            return (
+              <SwiperSlide key={item.id}>
+                <div className="flex flex-col space-y-4">
+                <img src={homeImage} alt="Foto da notícia" />
+                <h2 className="text-lg font-semibold text-green-500">{item.title}</h2>
+                <p className="break-words">
+                  {item.description}
+                </p>
 
-              <div className="flex justify-between text-muted-foreground">
-                <span>Autor: Leonardo Menezes</span>
-                <span>11/03/2005</span>
+                <div className="flex justify-between text-muted-foreground">
+                  <span>{item.author}</span>
+                  <span>{item.created_at}</span>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="flex flex-col space-y-4">
-              <img src={homeImage} alt="Foto da notícia" />
-              <h2 className="text-lg font-semibold text-green-500">Novo projeto de infraestrutura é anunciado para revitalizar áreas urbanas.</h2>
-              <p className="break-words">
-                Um novo projeto de infraestrutura foi anunciado nesta semana com o objetivo de revitalizar áreas urbanas em grandes cidades. O plano inclui melhorias em sistemas de transporte público, ampliação de áreas verdes e modernização de espaços comunitários. Autoridades destacam que o projeto visa melhorar a qualidade de vida dos moradores e promover o desenvolvimento sustentável. As obras devem começar no início do próximo ano e estão previstas para serem concluídas em 2026.
-              </p>
-
-              <div className="flex justify-between text-muted-foreground">
-                <span>Autor: Leonardo Menezes</span>
-                <span>11/03/2005</span>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="flex flex-col space-y-4">
-              <img src={homeImage} alt="Foto da notícia" />
-              <h2 className="text-lg font-semibold text-green-500">Novo projeto de infraestrutura é anunciado para revitalizar áreas urbanas.</h2>
-              <p className="break-words">
-                Um novo projeto de infraestrutura foi anunciado nesta semana com o objetivo de revitalizar áreas urbanas em grandes cidades. O plano inclui melhorias em sistemas de transporte público, ampliação de áreas verdes e modernização de espaços comunitários. Autoridades destacam que o projeto visa melhorar a qualidade de vida dos moradores e promover o desenvolvimento sustentável. As obras devem começar no início do próximo ano e estão previstas para serem concluídas em 2026.
-              </p>
-
-              <div className="flex justify-between text-muted-foreground">
-                <span>Autor: Leonardo Menezes</span>
-                <span>11/03/2005</span>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className="flex flex-col space-y-4">
-              <img src={homeImage} alt="Foto da notícia" />
-              <h2 className="text-lg font-semibold text-green-500">Novo projeto de infraestrutura é anunciado para revitalizar áreas urbanas.</h2>
-              <p className="break-words">
-                Um novo projeto de infraestrutura foi anunciado nesta semana com o objetivo de revitalizar áreas urbanas em grandes cidades. O plano inclui melhorias em sistemas de transporte público, ampliação de áreas verdes e modernização de espaços comunitários. Autoridades destacam que o projeto visa melhorar a qualidade de vida dos moradores e promover o desenvolvimento sustentável. As obras devem começar no início do próximo ano e estão previstas para serem concluídas em 2026.
-              </p>
-
-              <div className="flex justify-between text-muted-foreground">
-                <span>Autor: Leonardo Menezes</span>
-                <span>11/03/2005</span>
-              </div>
-            </div>
-          </SwiperSlide>
-
+              </SwiperSlide>
+            )
+          })}
         </Swiper>
       </div>
     </div>

@@ -29,16 +29,12 @@ export function Header() {
             Sobre
           </Link>
 
-          <Link to="/about" className="hover:text-green-700 border-b py-4">
+          <Link to="/news" className="hover:text-green-700 border-b py-4">
             Notícias
           </Link>
 
-          <Link to="/about" className="hover:text-green-700 border-b py-4">
+          <Link to="/conventions" className="hover:text-green-700 border-b py-4">
             Convenções Coletivas
-          </Link>
-
-          <Link to="/about" className="hover:text-green-700 border-b py-4">
-            Contato
           </Link>
         </nav>
       </div>
@@ -56,16 +52,12 @@ export function Header() {
             Sobre
           </Link>
 
-          <Link to="/about" className="hover:text-green-700">
+          <Link to="/news" className="hover:text-green-700">
             Notícias
           </Link>
 
-          <Link to="/about" className="hover:text-green-700">
+          <Link to="/conventions" className="hover:text-green-700">
             Convenções Coletivas
-          </Link>
-
-          <Link to="/about" className="hover:text-green-700">
-            Contato
           </Link>
         </nav>
 
