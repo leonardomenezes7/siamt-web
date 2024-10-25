@@ -5,7 +5,7 @@ import { AlignJustify, X } from "lucide-react";
 import { useState } from "react";
 
 export function Header() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <>
