@@ -40,10 +40,10 @@ export function Header() {
       </div>
 
       <header className="bg-slate-50 w-full flex items-center px-12 py-4 justify-between max-md:px-6">
-        <img src={logo} alt="Logo SIAMT" className="max-md:hidden" />
+        <img src={logo} alt="Logo SIAMT" className="max-lg:hidden" />
         <img src={mobileLogo} alt="Logo SIAMT" className="h-8 lg:hidden" />
 
-        <nav className="flex gap-12 font-semibold text-green-600 max-md:hidden">
+        <nav className="flex gap-12 font-semibold text-green-600 max-lg:hidden">
           <Link to="/" className="hover:text-green-700">
             Home
           </Link>

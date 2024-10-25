@@ -90,15 +90,15 @@ export function Admin() {
     <div className="flex flex-col">
       <Header/>
 
-      <div className="w-full px-12 py-6">
+      <div className="w-full px-12 py-6 max-md:p-6">
         <Link to="/" className="flex gap-4 text-green-500">
           <ArrowLeft/>
           Voltar
         </Link>
       </div>
 
-      <div className="mx-auto bg-slate-100 w-[800px] rounded-lg p-12 mb-12">
-        <h2 className="text-green-500 text-4xl italic mb-8">Nova notícia</h2>
+      <div className="mx-auto bg-slate-100 w-[800px] rounded-lg p-12 mb-12 max-md:p-6 max-md:w-auto">
+        <h2 className="text-green-500 text-4xl italic mb-8 max-md:text-xl">Nova notícia</h2>
 
         <form className="flex flex-col space-y-5" onSubmit={handleSubmitNews}>
           <div className="flex flex-col gap-2">
@@ -111,6 +111,7 @@ export function Admin() {
               id="title"
               placeholder="Insira o título aqui..."
               onChange={e => setTitle(e.target.value)}
+              className="text-[16px]"
             />
           </div>
 
@@ -124,6 +125,7 @@ export function Admin() {
               id="author"
               placeholder="Insira o nome do autor aqui..."
               onChange={e => setAuthor(e.target.value)}
+              className="text-[16px]"
             />
           </div>
 
@@ -136,7 +138,7 @@ export function Admin() {
             <Textarea
               id="description"
               placeholder="Insira a descrição aqui..."
-              className="resize-none h-[200px]"
+              className="resize-none h-[200px] text-[16px]"
               onChange={e => setDescription(e.target.value)}
             />
           </div>
@@ -161,8 +163,8 @@ export function Admin() {
         </form>
       </div>
 
-      <div className="mx-auto bg-slate-100 w-[800px] rounded-lg p-12 mb-12">
-        <h2 className="text-green-500 text-4xl italic mb-8">Nova Convenção coletiva</h2>
+      <div className="mx-auto bg-slate-100 w-[800px] rounded-lg p-12 mb-12 max-md:p-6 max-md:w-auto">
+        <h2 className="text-green-500 text-4xl italic mb-8 max-md:text-xl">Nova Convenção coletiva</h2>
 
         <form className="flex flex-col space-y-5" onSubmit={handleSubmitConvention}>
           <div className="flex flex-col gap-2">
@@ -175,6 +177,7 @@ export function Admin() {
               id="name"
               placeholder="Insira o nome aqui..."
               onChange={e => setName(e.target.value)}
+              className="text-[16px]"
             />
           </div>
 
@@ -188,6 +191,7 @@ export function Admin() {
               id="year"
               placeholder="Insira o ano da convenção aqui..."
               onChange={e => setYear(e.target.value)}
+              className="text-[16px]"
             />
           </div>
 
