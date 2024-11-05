@@ -6,6 +6,7 @@ interface Convention {
   name: string,
   year: string,
   file: string,
+  fileUrl: string
 }
 
 export function Convention() {
@@ -33,7 +34,7 @@ export function Convention() {
             <div>
               <a
                 href={item.file}
-                download={`https://siamt-api.onrender.com/uploads/${item.file}`}
+                download={item.fileUrl}
               >
                 <Download/>
               </a>
