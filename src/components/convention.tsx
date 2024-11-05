@@ -32,7 +32,7 @@ export function Convention() {
 
             <div>
               <a
-                href={`https://siamt-api.onrender.com/uploads/${item.file}`}
+                href={item.file}
                 download={`https://siamt-api.onrender.com/uploads/${item.file}`}
               >
                 <Download/>
