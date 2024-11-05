@@ -12,7 +12,7 @@ export function Convention() {
   const [conventions, setConventions] = useState<Convention[]>([])
 
   useEffect(() => {
-    fetch("http://localhost:3333/conventions")
+    fetch("https://siamt-api.onrender.com/conventions")
       .then(response => response.json())
       .then(data => {
         setConventions(data.conventions)
@@ -21,19 +21,22 @@ export function Convention() {
   }, [])
 
   return(
-    <div className="flex flex-col space-y-4">
+    <div className="flex flex-col gap-4">
       {conventions.map((item) => {
         return(
-          <div className="bg-slate-100 w-[800px] flex mx-auto p-12 rounded-lg justify-between max-md:p-6 max-md:w-[350px]">
+          <div key={item.id} className="bg-slate-100 w-[800px] flex mx-auto p-12 rounded-lg justify-between max-md:p-6 max-md:w-[350px]">
             <div>
               <h2 className="font-bold text-green-500">{item.name}</h2>
               <span className="italic font-bold">{item.year}</span>
             </div>
 
             <div>
-              <button>
+              <a
+                href={item.file}
+                download={item.file}
+              >
                 <Download/>
-              </button>
+              </a>
             </div>
           </div>
         )

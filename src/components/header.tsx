@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import logo from "../assets/logo-g.png";
-import mobileLogo from "../assets/logo-s.png";
-import { AlignJustify, X } from "lucide-react";
-import { useState } from "react";
+import { Link } from "react-router-dom"
+import logo from "../assets/logo-g.png"
+import mobileLogo from "../assets/logo-s.png"
+import { AlignJustify, X } from "lucide-react"
+import { useState } from "react"
 
 export function Header() {
   const [open, setOpen] = useState(false)

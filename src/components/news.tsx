@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from "swiper/react"
-import homeImage from "../assets/home.png"
 import 'swiper/css';
 import { useEffect, useState } from "react";
 
@@ -9,7 +8,7 @@ interface News {
   description: string,
   author: string,
   created_at: string
-  image: string,
+  imageUrl: string,
 }
 
 export function News() {
@@ -17,7 +16,7 @@ export function News() {
   const [news, setNews] = useState<News[]>([])
 
   useEffect(() => {
-    fetch("http://localhost:3333/news")
+    fetch("https://siamt-api.onrender.com/news")
       .then(response => response.json())
       .then(data => {
         setNews(data.allNews)
@@ -49,7 +48,7 @@ export function News() {
             return (
               <SwiperSlide key={item.id}>
                 <div className="flex flex-col space-y-4">
-                <img src={homeImage} alt="Foto da notícia" />
+                <img src={item.imageUrl} alt="Foto da notícia" />
                 <h2 className="text-lg font-semibold text-green-500">{item.title}</h2>
                 <p className="break-words">
                   {item.description}
