@@ -32,8 +32,8 @@ export function Convention() {
 
             <div>
               <a
-                href={item.file}
-                download={item.file}
+                href={`https://siamt-api.onrender.com/uploads/${item.file}`}
+                download={`https://siamt-api.onrender.com/uploads/${item.file}`}
               >
                 <Download/>
               </a>
