@@ -2,9 +2,10 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { News } from "@/components/news"
 import { Map } from "@/components/map"
+import { Services } from "@/components/services"
 
 export function Home() {
-   return(
+  return(
     <div className="">
       <Header/>
 
@@ -14,6 +15,8 @@ export function Home() {
         </div>
 
         <News/>
+
+        <Services/>
 
         <Map/>
       </main>
