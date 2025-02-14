@@ -3,6 +3,11 @@ import { Header } from "@/components/header"
 import { News } from "@/components/news"
 import { Map } from "@/components/map"
 import { Services } from "@/components/services"
+import { Message } from "@/components/message"
+import { Directory } from "@/components/directory"
+import { Status } from "@/components/status"
+import { Associates } from "@/components/associates"
+import { Join } from "@/components/join"
 
 export function Home() {
   return(
@@ -18,8 +23,18 @@ export function Home() {
 
         <Services/>
 
+        <Status/>
+
+        <Message/>
+
+        <Associates/>
+
+        <Join/>
+
         <Map/>
       </main>
+
+      <Directory/>
 
       <Footer/>
     </div>
