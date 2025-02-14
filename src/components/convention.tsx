@@ -34,7 +34,7 @@ export function Convention() {
             <div>
               <a
                 href={item.file}
-                download={item.fileUrl}
+                download={item.file}
               >
                 <Download/>
               </a>
