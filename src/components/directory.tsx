@@ -1,71 +1,80 @@
 export function Directory() {
   return (
-    <section className="bg-gray-100 rounded-xl shadow-lg px-4 md:px-8 lg:px-16 py-8 flex flex-col gap-6">
+    <section className="bg-gray-100 rounded-xl shadow-lg px-4 md:px-8 lg:px-16 py-12 my-12">
       {/* Título Principal */}
       <h2 className="text-2xl font-bold italic text-green-600 text-center">
-        DIRETORIA 2021/2024
+        DIRETORIA <br />
+        TRIÊNIO 2024/2027
       </h2>
 
-      {/* Efetivos */}
-      <div>
-        <h3 className="text-lg font-semibold text-green-600 border-b pb-2">EFETIVOS</h3>
+      <p className="text-sm text-gray-800 text-center mt-2">
+        SINDICATO INTERMUNICIPAL DAS INDÚSTRIAS DA ALIMENTAÇÃO NO ESTADO DE MATO GROSSO
+        <br />
+        CNPJ 03.750.171/0001-26
+      </p>
+
+      {/* Diretoria - Efetivos */}
+      <div className="mt-8">
+        <h3 className="text-lg font-semibold text-green-600 border-b pb-2">DIRETORIA - EFETIVOS</h3>
         <ul className="text-sm md:text-base text-gray-800 grid grid-cols-1 md:grid-cols-2 gap-y-2 mt-3">
-          <li><span className="font-bold">Wilmar José Franzner</span> – Presidente</li>
-          <li><span className="font-bold">Edson Eugenio Bruehmueller</span> – 1º Vice-Presidente</li>
-          <li><span className="font-bold">Alvaro Hostins Junior</span> – Vice-Presidente</li>
-          <li><span className="font-bold">Luis Antonio Novaes Desidério</span> – Diretor Administrativo</li>
-          <li><span className="font-bold">Rubens Porto Rodrigues</span> – Diretor Financeiro</li>
+          <li><strong>Wilmar José Franzner</strong> - Presidente</li>
+          <li><strong>Luis Antonio Novaes Desidério</strong> – 1º Vice Presidente</li>
+          <li><strong>Maria Aparecida Favero Neto Perez</strong> - Vice Presidente</li>
+          <li><strong>Marli Becker Santos</strong> – Diretor Administrativo</li>
+          <li><strong>Rubens Porto Rodrigues</strong> – Diretor Financeiro</li>
         </ul>
       </div>
 
-      {/* Suplentes */}
-      <div>
-        <h3 className="text-lg font-semibold text-green-600 border-b pb-2">SUPLENTES</h3>
+      {/* Diretoria - Suplentes */}
+      <div className="mt-6">
+        <h3 className="text-lg font-semibold text-green-600 border-b pb-2">DIRETORIA - SUPLENTES</h3>
         <ul className="text-sm md:text-base text-gray-800 grid grid-cols-2 gap-y-2 mt-3">
-          <li><span className="font-bold">Alexandre Nobre da Silva</span></li>
-          <li><span className="font-bold">Antonio Wilson Ieski Junior</span></li>
-          <li><span className="font-bold">Rodolfo Alves de Almeida</span></li>
-          <li><span className="font-bold">Marli Becker Santos</span></li>
-          <li><span className="font-bold">Daniel Nery Franzner</span></li>
+          <li>Edson Eugênio Bruehmueller</li>
+          <li>Elizabete Cristina de Brito Garcia</li>
+          <li>Rodolfo Alves de Almeida</li>
+          <li>Elson Rudimar de Carvalho</li>
+          <li>Antonio Wilson Ieski Junior</li>
         </ul>
       </div>
 
       {/* Conselho Fiscal - Efetivos */}
-      <div>
+      <div className="mt-6">
         <h3 className="text-lg font-semibold text-green-600 border-b pb-2">CONSELHO FISCAL - EFETIVOS</h3>
         <ul className="text-sm md:text-base text-gray-800 grid grid-cols-2 gap-y-2 mt-3">
-          <li><span className="font-bold">Joair Pinho de Souza</span></li>
-          <li><span className="font-bold">Elizabete Cristina de Brito Garcia</span></li>
-          <li><span className="font-bold">Ulana Maria Bruehmueller Borges</span></li>
+          <li>Joair Pinho de Souza</li>
+          <li>Ricardo Alves de Almeida</li>
+          <li>Daniel Nery Franzner</li>
         </ul>
       </div>
 
       {/* Conselho Fiscal - Suplentes */}
-      <div>
+      <div className="mt-6">
         <h3 className="text-lg font-semibold text-green-600 border-b pb-2">CONSELHO FISCAL - SUPLENTES</h3>
         <ul className="text-sm md:text-base text-gray-800 grid grid-cols-2 gap-y-2 mt-3">
-          <li><span className="font-bold">Elson Rudimar de Carvalho</span></li>
-          <li><span className="font-bold">Léo Barato</span></li>
-          <li><span className="font-bold">Felipe Neri Franzner</span></li>
+          <li>Filipe Nery Franzner</li>
+          <li>Jocimar Ricas</li>
+          <li>Flavia Alves de Almeida</li>
         </ul>
       </div>
 
-      {/* Delegados Representantes junto à FIEMT */}
-      <div>
-        <h3 className="text-lg font-semibold text-green-600 border-b pb-2">DELEGADOS REPRESENTANTES JUNTO À FIEMT</h3>
+      {/* Representantes junto ao Conselho da FIEMT */}
+      <div className="mt-6">
+        <h3 className="text-lg font-semibold text-green-600 border-b pb-2">
+          REPRESENTANTES JUNTO AO CONSELHO DE REPRESENTANTES DA FIEMT
+        </h3>
 
         {/* Efetivos */}
         <h4 className="text-green-600 font-medium mt-3">EFETIVOS</h4>
         <ul className="text-sm md:text-base text-gray-800 grid grid-cols-2 gap-y-2">
-          <li><span className="font-bold">Wilmar José Franzner</span></li>
-          <li><span className="font-bold">Luis Antonio Novaes Desidério</span></li>
+          <li>Wilmar José Franzner</li>
+          <li>Luis Antonio Novaes Desidério</li>
         </ul>
 
         {/* Suplentes */}
         <h4 className="text-green-600 font-medium mt-3">SUPLENTES</h4>
         <ul className="text-sm md:text-base text-gray-800 grid grid-cols-2 gap-y-2">
-          <li><span className="font-bold">Rubens Porto Rodrigues</span></li>
-          <li><span className="font-bold">Alvaro Hostins Junior</span></li>
+          <li>Rubens Porto Rodrigues</li>
+          <li>Edson Eugênio Bruehmueller</li>
         </ul>
       </div>
     </section>

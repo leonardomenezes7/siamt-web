@@ -8,6 +8,7 @@ import { Directory } from "@/components/directory"
 import { Status } from "@/components/status"
 import { Associates } from "@/components/associates"
 import { Join } from "@/components/join"
+import { Curriculum } from "@/components/curriculum"
 
 export function Home() {
   return(
@@ -31,10 +32,13 @@ export function Home() {
 
         <Join/>
 
-        <Map/>
+
+        <Curriculum/>
       </main>
 
       <Directory/>
+      
+      <Map/>
 
       <Footer/>
     </div>
