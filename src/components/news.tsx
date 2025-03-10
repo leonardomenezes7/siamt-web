@@ -16,7 +16,7 @@ export function News() {
   const [news, setNews] = useState<News[]>([])
 
   useEffect(() => {
-    fetch("http://localhost:3333/news")
+    fetch("https://siamt-api.onrender.com/news")
       .then(response => response.json())
       .then(data => {
         console.log(data)

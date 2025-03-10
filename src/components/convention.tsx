@@ -13,7 +13,7 @@ export function Convention() {
   const [conventions, setConventions] = useState<Convention[]>([])
 
   useEffect(() => {
-    fetch("http://localhost:3333/conventions")
+    fetch("https://siamt-api.onrender.com/conventions")
       .then(response => response.json())
       .then(data => {
         console.log("📥 Dados recebidos no frontend:", data) // 👀 Log para verificar se os dados chegam
