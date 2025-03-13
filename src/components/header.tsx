@@ -9,32 +9,31 @@ export function Header() {
 
   return (
     <>
-      <div
-        className={`bg-slate-50 absolute inset-0 h-full flex flex-col p-6 ${
-          open ? "visible" : "hidden"
-        }`}
-      >
+      {/* Menu Mobile */}
+      <div className={`bg-slate-50 fixed top-0 left-0 w-full h-full flex flex-col p-6 z-50 transition-transform duration-300 ${
+        open ? "translate-x-0" : "translate-x-full"
+      }`}>
         <div className="flex justify-between">
           <img src={mobileLogo} alt="Logo SIAMT" className="h-8 lg:hidden" />
-          <X onClick={() => setOpen((currentValue) => !currentValue)} />
+          <X onClick={() => setOpen(false)} onTouchStart={() => setOpen(false)} />
         </div>
-        
 
         <nav className="flex flex-col space-y-8 font-semibold text-green-600 mt-8">
-          <Link to="/" className="hover:text-green-700 border-b py-4">
+          <Link to="/" className="hover:text-green-700 border-b py-4" onClick={() => setOpen(false)}>
             Home
           </Link>
 
-          <Link to="/about" className="hover:text-green-700 border-b py-4">
+          <Link to="/about" className="hover:text-green-700 border-b py-4" onClick={() => setOpen(false)}>
             Sobre
           </Link>
 
-          <Link to="/conventions" className="hover:text-green-700 border-b py-4">
+          <Link to="/conventions" className="hover:text-green-700 border-b py-4" onClick={() => setOpen(false)}>
             Convenções Coletivas
           </Link>
         </nav>
       </div>
 
+      {/* Header */}
       <header className="bg-slate-50 w-full flex items-center px-12 py-4 justify-between max-md:px-6">
         <img src={logo} alt="Logo SIAMT" className="max-lg:hidden" />
         <img src={mobileLogo} alt="Logo SIAMT" className="h-8 lg:hidden" />
@@ -53,13 +52,15 @@ export function Header() {
           </Link>
         </nav>
 
+        {/* Botão de Menu Mobile */}
         <div
           className="lg:hidden"
-          onClick={() => setOpen((currentValue) => !currentValue)}
+          onClick={() => setOpen(true)}
+          onTouchStart={() => setOpen(true)}
         >
           <AlignJustify />
         </div>
       </header>
     </>
-  );
+  )
 }
