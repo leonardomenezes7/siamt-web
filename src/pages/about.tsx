@@ -8,7 +8,7 @@ import President3 from "../assets/presidente-3.jpeg";
 import President7 from "../assets/presidente-7.png";
 import President2 from "../assets/presidente-2.jpeg";
 import President8 from "../assets/presidente-8.png";
-import President6 from "../assets/presidente-6.png";
+import President6 from "../assets/marco.jpeg";
 import User from "../assets/user.jpg";
 
 export function About() {
@@ -60,11 +60,11 @@ export function About() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6 mb-20">
           {[
-            { name: "Wilmar José Franzner", period: "2009 - 2015 / 2015 - 2024", image: President1 },
-            { name: "Marco Antonio Lorga", period: "2000 - 2003 / 2003 - 2006 / 2006 - 2009", image: President6 },
-            { name: "Alexandre H. C. de Souza Furlan", period: "1994 - 1997 / 1997 - 2000", image: President5 },
+            { name: "Wilmar José Franzner", period: "2009 - 2027", image: President1 },
+            { name: "Marco Antonio Lorga", period: "2000 - 2009", image: President6 },
+            { name: "Alexandre H. C. de Souza Furlan", period: "1994 - 2000", image: President5 },
             { name: "Luís Carlos Rodrigues", period: "1989 - 1994", image: President3 },
-            { name: "Alfredo Yuraria Takesawa", period: "Ano não disponível", image: President7 },
+            { name: "Alfredo Yuraria Takesawa", period: "1988 - 1991", image: President7 },
             { name: "Célio Gertz Xaver", period: "1984 - 1989", image: President2 },
             { name: "Moulard Herculano Da Costa", period: "1979 - 1982", image: User },
             { name: "Archimedes Pereira Lima", period: "1975 - 1979", image: President8 },
@@ -73,7 +73,7 @@ export function About() {
               <img 
                 src={president.image} 
                 alt={president.name} 
-                className="w-40 h-40 rounded-full object-cover border-4 border-green-500"
+                className="w-40 h-40 rounded-full border-4 border-green-500"
               />
               <h3 className="text-lg font-semibold text-green-600 mt-4">{president.name}</h3>
               <p className="text-gray-600">{president.period}</p>
