@@ -2,7 +2,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import President1 from "../assets/presidente.jpeg";
+import President1 from "../assets/president.jpeg";
 import President5 from "../assets/presidente-5.jpeg";
 import President3 from "../assets/presidente-3.jpeg";
 import President7 from "../assets/presidente-7.png";
