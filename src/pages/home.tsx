@@ -31,7 +31,6 @@ export function Home() {
 
         <Join/>
 
-
         <Curriculum/>
       </main>
 

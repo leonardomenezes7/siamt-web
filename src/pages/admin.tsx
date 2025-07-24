@@ -54,6 +54,10 @@ export function Admin() {
   const [newsList, setNewsList] = useState<News[]>([])
   const [conventionsList, setConventionsList] = useState<Convention[]>([])
 
+  // Estados para associados
+  const [associateName, setAssociateName] = useState("")
+  const [associatesList, setAssociatesList] = useState<{ id: string; name: string }[]>([])
+
   // Função para buscar notícias da API
   async function fetchNews() {
     try {
@@ -98,10 +102,55 @@ export function Admin() {
     }
   }
 
-  // Carregar as notícias e convenções ao entrar na página
+  // Função para buscar associados da API
+  async function fetchAssociates() {
+    try {
+      const response = await api.get("/associates")
+      setAssociatesList(response.data)
+    } catch (error) {
+      console.error("Erro ao buscar associados:", error)
+    }
+  }
+
+  // Função para cadastrar associado
+  async function handleSubmitAssociate(event: React.FormEvent) {
+    event.preventDefault()
+    if (!associateName.trim()) {
+      alert("Nome do associado não pode ser vazio.")
+      return
+    }
+    try {
+      const response = await api.post("/associates", { name: associateName })
+      if (response.status === 201) {
+        alert("Associado cadastrado com sucesso!")
+        setAssociateName("")
+        fetchAssociates()
+      } else {
+        alert("Erro ao cadastrar associado.")
+      }
+    } catch (error) {
+      console.error("Erro ao cadastrar associado:", error)
+      alert("Erro ao cadastrar associado.")
+    }
+  }
+
+  // Função para deletar associado
+  async function handleDeleteAssociate(id: string) {
+    try {
+      await api.delete(`/associates/${id}`)
+      setAssociatesList((prev) => prev.filter((a) => a.id !== id))
+      alert("Associado removido com sucesso!")
+    } catch (error) {
+      console.error("Erro ao deletar associado:", error)
+      alert("Erro ao deletar associado.")
+    }
+  }
+
+  // Carregar as notícias, convenções e associados ao entrar na página
   useEffect(() => {
     fetchNews()
     fetchConventions()
+    fetchAssociates()
   }, [])
 
   async function handleSubmitNews(event: React.FormEvent) {
@@ -253,6 +302,39 @@ export function Admin() {
               <li key={news.id} className="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
                 <span>{news.title}</span>
                 <button onClick={() => handleDeleteNews(news.id)} className="text-red-500 hover:text-red-700">
+                  <Trash />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* Formulário de Associado */}
+      <div className="mx-auto bg-slate-100 w-[800px] rounded-lg p-12 mb-12 max-md:p-6 max-md:w-auto">
+        <h2 className="text-green-500 text-4xl italic mb-8 max-md:text-xl">Novo Associado</h2>
+        <form className="flex flex-col space-y-5" onSubmit={handleSubmitAssociate}>
+          <div className="flex flex-col gap-2">
+            <label className="flex gap-2">
+              <User /> Nome da empresa
+            </label>
+            <Input placeholder="Insira o nome do associado..." value={associateName} onChange={e => setAssociateName(e.target.value)} />
+          </div>
+          <Button type="submit" className="bg-transparent w-[100px] mx-auto text-green-500">Enviar</Button>
+        </form>
+      </div>
+
+      {/* Lista de Associados */}
+      <div className="mx-auto bg-slate-100 w-[800px] rounded-lg p-12 mb-12 max-md:p-6 max-md:w-auto">
+        <h2 className="text-green-500 text-4xl italic mb-8 max-md:text-xl">Gerenciar Associados</h2>
+        {associatesList.length === 0 ? (
+          <p className="text-gray-500 text-center">Nenhum associado cadastrado.</p>
+        ) : (
+          <ul className="space-y-4">
+            {associatesList.map(associate => (
+              <li key={associate.id} className="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
+                <span>{associate.name}</span>
+                <button onClick={() => handleDeleteAssociate(associate.id)} className="text-red-500 hover:text-red-700">
                   <Trash />
                 </button>
               </li>
